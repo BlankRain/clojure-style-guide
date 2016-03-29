@@ -251,15 +251,11 @@
         (+ x y)))
     ```
 
-* <a name="multiple-arity-order"></a> Sort the arities of a function
-  from fewest to most arguments. The common case of multi-arity
-  functions is that some K arguments fully specifies the function's
-  behavior, and that arities N < K partially apply the K arity, and
-  arities N > K provide a fold of the K arity over varargs.
+* <a name="multiple-arity-order"></a> 函数的实现按传参个数由少到多排序. 通常情况下,函数的多重实现,是由一个K个参数的实现全方位决定了整个函数的行为. 然后呢,其他N参的实现是通过给这个K参函数传不同的参数.
   <sup>[[link](#multiple-arity-order)]</sup>
 
     ```Clojure
-    ;; good - it's easy to scan for the nth arity
+    ;; good - it's easy to scan for the nth arity 查找第N个实现很方便
     (defn foo
       "I have two arities."
       ([x]
@@ -286,7 +282,7 @@
     ```
 
 * <a name="align-docstring-lines"></a>
-  Indent each line of multi-line docstrings.
+  多行文档,每行都缩进
 <sup>[[link](#align-docstring-lines)]</sup>
 
     ```Clojure
@@ -306,8 +302,7 @@
     ```
 
 * <a name="crlf"></a>
-  Use Unix-style line endings. (*BSD/Solaris/Linux/OSX users are
-  covered by default, Windows users have to be extra careful.)
+  使用Unix-风格换行符. (*BSD/Solaris/Linux/OSX 用户默认就是, Windows 用户得额外小心了.)
 <sup>[[link](#crlf)]</sup>
 
     * If you're using Git you might want to add the following
@@ -339,7 +334,7 @@ and before a closing bracket.
 > -- Alan Perlis
 
 * <a name="no-commas-for-seq-literals"></a>
-  Don't use commas between the elements of sequential collection literals.
+  序列集合不用逗号分隔
 <sup>[[link](#no-commas-for-seq-literals)]</sup>
 
     ```Clojure
