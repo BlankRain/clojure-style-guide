@@ -1,79 +1,71 @@
-# The Clojure Style Guide
+# Clojure 风情指南针
 
-> Role models are important. <br/>
+> Role models are important.(角色建模是重要的.) <br/>
 > -- Officer Alex J. Murphy / RoboCop
 
-This Clojure style guide recommends best practices so that real-world Clojure
-programmers can write code that can be maintained by other real-world Clojure
-programmers. A style guide that reflects real-world usage gets used, and a
-style guide that holds to an ideal that has been rejected by the people it is
-supposed to help risks not getting used at all &mdash; no matter how good it is.
+ 宝宝推出的最佳实践,有助于Clojure程序员维护代码.
+ 本指南针反应了现实中使用的用法,且用来坚定那些超级棒却被人们拒绝实现的理想.
 
-The guide is separated into several sections of related rules. I've
-tried to add the rationale behind the rules (if it's omitted, I've
-assumed that it's pretty obvious).
 
-I didn't come up with all the rules out of nowhere; they are mostly
-based on my extensive career as a professional software engineer,
-feedback and suggestions from members of the Clojure community, and
-various highly regarded Clojure programming resources, such as
+本指南针分割为若干相关部分.宝宝尽量指明它们背后的联系.(如果被省略,那肯定是联系太明显)
+
+
+宝宝未能详尽所有规范.它们大多数来源于宝宝的职业码农生涯,Clojure社区反馈,或其他优质Clojure资源,比如
 ["Clojure Programming"](http://www.clojurebook.com/)
-and ["The Joy of Clojure"](http://joyofclojure.com/).
+和 ["The Joy of Clojure"](http://joyofclojure.com/).
 
-The guide is still a work in progress; some sections are missing,
-others are incomplete, some rules are lacking examples, some rules
-don't have examples that illustrate them clearly enough. In due time
-these issues will be addressed &mdash; just keep them in mind for now.
 
-Please note, that the Clojure developing community maintains a list of
-[coding standards for libraries](http://dev.clojure.org/display/community/Library+Coding+Standards),
-too.
+本指南针持续维护中,某些部分缺失或不完整,某些规范缺少范例或范例说服性不强.在不久的将来,都会一一解决.目前,先这么着吧.
 
-You can generate a PDF or an HTML copy of this guide using
+请注意,Clojure社区也有一份
+[库编码规范](http://dev.clojure.org/display/community/Library+Coding+Standards),
+
+你可以生成一份PDF或HTML文档.用这个神器:
 [Transmuter](https://github.com/TechnoGate/transmuter).
 
-Translations of the guide are available in the following languages:
+还有其他语言的译文哦:
 
-* [Japanese](https://github.com/totakke/clojure-style-guide/blob/ja/README.md)
-* [Korean](https://github.com/kwakbab/clojure-style-guide/blob/master/README-koKO.md)
+* [英文原著](https://github.com/bbatsov/clojure-style-guide/blob/master/README.md)
+* [中国盗版](https://github.com/BlankRain/clojure-style-guide/edit/master/README-zhCN.md)
+* [日本盗版](https://github.com/totakke/clojure-style-guide/blob/ja/README.md)
+* [韩国盗版](https://github.com/kwakbab/clojure-style-guide/blob/master/README-koKO.md)
 
-## Table of Contents
+## 目录
 
-* [Source Code Layout & Organization](#source-code-layout--organization)
-* [Syntax](#syntax)
-* [Naming](#naming)
-* [Collections](#collections)
-* [Mutation](#mutation)
-* [Strings](#strings)
-* [Exceptions](#exceptions)
-* [Macros](#macros)
-* [Comments](#comments)
-    * [Comment Annotations](#comment-annotations)
-* [Existential](#existential)
-* [Tooling](#tooling)
+* [源码组织及布局](#源码组织及布局)
+* [语法](#语法)
+* [命名](#命名)
+* [集合](#集合)
+* [重要差异](#重要差异)
+* [字符串](#字符串)
+* [异常](#异常)
+* [宏](#宏)
+* [注释](#注释)
+    * [注释注解](#注释注解)
+* [信条](#信条)
+* [工具](#工具)
 
-## Source Code Layout & Organization
+## 源码组织及布局
 
-> Nearly everybody is convinced that every style but their own is
-> ugly and unreadable. Leave out the "but their own" and they're
-> probably right... <br/>
+> 几乎所有人都觉得："宝宝的最棒,其他的都是渣.".  
+> 放弃"宝宝的",这才对了. <br/>
 > -- Jerry Coffin (on indentation)
 
+
+
 * <a name="spaces"></a>
-  Use **spaces** for indentation. No hard tabs.
+   **空格** 缩进,别用tab.
 <sup>[[link](#spaces)]</sup>
 
 * <a name="body-indentation"></a>
-Use 2 spaces to indent the bodies of
-forms that have body parameters.  This covers all `def` forms, special
-forms and macros that introduce local bindings (e.g. `loop`, `let`,
-`when-let`) and many macros like `when`, `cond`, `as->`, `cond->`, `case`,
-`with-*`, etc.
+两个空格缩进表体.  它包括所有的 `def` 形式,特殊形式,宏,本地绑定(比如: `loop`, `let`,
+`when-let`) 或其他宏 像 `when`, `cond`, `as->`, `cond->`, `case`,
+`with-*` 等.
 <sup>[[link](#body-indentation)]</sup>
 
 
     ```Clojure
-    ;; good
+    ;; good 好
     (when something
       (something-else))
 
@@ -81,18 +73,18 @@ forms and macros that introduce local bindings (e.g. `loop`, `let`,
       (println "Hello, ")
       (println "world!"))
 
-    ;; bad - four spaces
+    ;; bad - four spaces 坏 四个空格
     (when something
         (something-else))
 
-    ;; bad - one space
+    ;; bad - one space 坏 一个空格
     (with-out-str
      (println "Hello, ")
      (println "world!"))
     ```
 
 * <a name="vertically-align-fn-args"></a>
-  Vertically align function (macro) arguments spanning multiple lines.
+  垂直对齐的函数或宏,参数换行
 <sup>[[link](#vertically-align-fn-args)]</sup>
 
     ```Clojure
@@ -106,8 +98,7 @@ forms and macros that introduce local bindings (e.g. `loop`, `let`,
     ```
 
 * <a name="one-space-indent"></a>
-Use a single space indentation for function (macro) arguments
-when there are no arguments on the same line as the function name.
+函数或宏,参数间一个空格. 无参的,函数名在一条线上.
 <sup>[[link](#one-space-indent)]</sup>
 
     ```Clojure
@@ -133,7 +124,7 @@ when there are no arguments on the same line as the function name.
     ```
 
 * <a name="vertically-align-let-and-map"></a>
-  Vertically align `let` bindings and map keywords.
+  垂直对齐 `let`绑定 和 map 关键字.
 <sup>[[link](#vertically-align-let-and-map)]</sup>
 
     ```Clojure
@@ -151,8 +142,7 @@ when there are no arguments on the same line as the function name.
     ```
 
 * <a name="optional-new-line-after-fn-name"></a>
-  Optionally omit the new line between the function name and argument
-  vector for `defn` when there is no docstring.
+  当没有函数文档时,在函数名或参数向量后换行.
 <sup>[[link](#optional-new-line-after-fn-name)]</sup>
 
     ```Clojure
@@ -171,8 +161,7 @@ when there are no arguments on the same line as the function name.
     ```
 
 * <a name="multimethod-dispatch-val-placement"></a>
-  Place the `dispatch-val` of a multimethod on the same line as the
-  function name.
+   多重方法转发值(`dispatch-val`)与函数名一条线上.  
 <sup>[[link](#multimethod-dispatch-val-placement)]</sup>
 
 
@@ -196,11 +185,8 @@ when there are no arguments on the same line as the function name.
     ```
 
 * <a name="docstring-after-fn-name"></a>
-  When adding a docstring – especially to a function using the above form – take
-  care to correctly place the docstring after the function name, not after the
-  argument vector.  The latter is not invalid syntax and won’t cause an error,
-  but includes the string as a form in the function body without attaching it to
-  the var as documentation.
+   给函数加文档的时候,注意不要加错地方了,文档的位置在函数名和参数之间,不是在参数后面.
+   放在方法体内,并不会报错,但是,作为函数文档的那个Var 会找不到值的.
 <sup>[[link](#docstring-after-fn-name)]</sup>
 
     ```Clojure
@@ -217,8 +203,7 @@ when there are no arguments on the same line as the function name.
     ```
 
 * <a name="oneline-short-fn"></a>
-  Optionally omit the new line between the argument vector and a short
-  function body.
+   简短的函数,方法体和参数放一行.  
 <sup>[[link](#oneline-short-fn)]</sup>
 
     ```Clojure
@@ -245,8 +230,8 @@ when there are no arguments on the same line as the function name.
     ```
 
 * <a name="multiple-arity-indentation"></a>
-  Indent each arity form of a function definition vertically aligned with its
-  parameters.<sup>[[link](#multiple-arity-indentation)]</sup>
+   每个函数定义体与它的参数头垂直对齐  
+<sup>[[link](#multiple-arity-indentation)]</sup>
 
     ```Clojure
     ;; good
@@ -257,7 +242,7 @@ when there are no arguments on the same line as the function name.
       ([x y]
        (+ x y)))
 
-    ;; bad - extra indentation
+    ;; bad - extra indentation  额外的缩进
     (defn foo
       "I have two arities."
       ([x]
