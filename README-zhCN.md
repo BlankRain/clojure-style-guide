@@ -1418,47 +1418,46 @@ as small as possible.
 <sup>[[link](#break-complicated-macros)]</sup>
 
 * <a name="macros-as-syntactic-sugar"></a>
-  A macro should usually just provide syntactic sugar and the core of
-  the macro should be a plain function. Doing so will improve
-  composability.
+  宏通常是用来提供语法糖.且宏的核心应是个简单函数.这样干,可提升组合性.
 <sup>[[link](#macros-as-syntactic-sugar)]</sup>
 
 * <a name="syntax-quoted-forms"></a>
-  Prefer syntax-quoted forms over building lists manually.
+  比起手撸列表,更推荐语法引用形式.
 <sup>[[link](#syntax-quoted-forms)]</sup>
 
-## Comments
+## 注释
 
-> Good code is its own best documentation. As you're about to add a
-> comment, ask yourself, "How can I improve the code so that this
-> comment isn't needed?" Improve the code and then document it to make
-> it even clearer. <br/>
-> -- Steve McConnell
+
+
+> 我是好代码,我为自己代言. 
+> 过多的解释意味着提升的空间.
+> 提升它.
+> 文档上让它更清晰. <br/>
+> -- 史蒂芬 麦克 科奈尔
 
 * <a name="self-documenting-code"></a>
-  Endeavor to make your code as self-documenting as possible.
+  努力让你的代码自注释.
 <sup>[[link](#self-documenting-code)]</sup>
 
 * <a name="four-semicolons-for-heading-comments"></a>
-  Write heading comments with at least four semicolons.
+ 注释标题四个分号开头
 <sup>[[link](#four-semicolons-for-heading-comments)]</sup>
-
+ 等级注释三个分号开头
 * <a name="three-semicolons-for-top-level-comments"></a>
-  Write top-level comments with three semicolons.
+ 
 <sup>[[link](#three-semicolons-for-top-level-comments)]</sup>
 
 * <a name="two-semicolons-for-code-fragment"></a>
-  Write comments on a particular fragment of code before that fragment
-and aligned with it, using two semicolons.
+ 在你要注释的代码段前写注释. 两个分号开头,然后对齐.  
+
 <sup>[[link](#two-semicolons-for-code-fragment)]</sup>
 
 * <a name="one-semicolon-for-margin-comments"></a>
-  Write margin comments with one semicolon.
+  边沿注释一个分号开头.
 <sup>[[link](#one-semicolon-for-margin-comments)]</sup>
 
 * <a name="semicolon-space"></a>
-  Always have at least one space between the semicolon
-and the text that follows it.
+  分号和文本间总是一个空格.
 <sup>[[link](#semicolon-space)]</sup>
 
     ```Clojure
