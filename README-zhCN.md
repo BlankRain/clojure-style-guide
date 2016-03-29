@@ -1,4 +1,4 @@
-# 抠脚的正确姿势
+# Clojure Style  论抠脚的正确姿势
 
 > Role models are important.(角色建模是重要的.) <br/>
 > -- Officer Alex J. Murphy / RoboCop
@@ -1633,21 +1633,17 @@ advance for your help!
 You can also support the style guide with financial
 contributions via [gittip](https://www.gittip.com/bbatsov).
 
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/bbatsov)
+[![通过Gittip支持](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/bbatsov)
 
-# License
+# 授权
 
 ![Creative Commons License](http://i.creativecommons.org/l/by/3.0/88x31.png)
-This work is licensed under a
+本文授权于
 [Creative Commons Attribution 3.0 Unported License](http://creativecommons.org/licenses/by/3.0/deed.en_US)
 
-# Spread the Word
+# 流芳一下
 
-A community-driven style guide is of little use to a community that
-doesn't know about its existence. Tweet about the guide, share it with
-your friends and colleagues. Every comment, suggestion or opinion we
-get makes the guide just a little bit better. And we want to have the
-best possible guide, don't we?
+再好的东西,没人晓得也是个渣. 微博上来一发,分享到朋友圈.每个赞,粉,黑都会让本文进步一点.那么,最好的文档在哪里?不用怀疑,在你的分享里.
 
 Cheers,<br/>
 [Bozhidar](https://twitter.com/bbatsov)
