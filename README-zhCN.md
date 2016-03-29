@@ -305,9 +305,7 @@
   使用Unix-风格换行符. (*BSD/Solaris/Linux/OSX 用户默认就是, Windows 用户得额外小心了.)
 <sup>[[link](#crlf)]</sup>
 
-    * If you're using Git you might want to add the following
-    configuration setting to protect your project from Windows line
-    endings creeping in:
+    * 如果你使用git,你可能想通过添加如下配置来保护你的项目免受windows 行尾符的乱入.
 
     ```
     bash$ git config --global core.autocrlf true
@@ -1302,12 +1300,11 @@ performance-critical portions of the code.
 <sup>[[link](#avoid-transient-colls)]</sup>
 
 * <a name="avoid-java-colls"></a>
-  Avoid the use of Java collections.
+  避免使用Java集合
 <sup>[[link](#avoid-java-colls)]</sup>
 
 * <a name="avoid-java-arrays"></a>
-  Avoid the use of Java arrays, except for interop scenarios and
-performance-critical code dealing heavily with primitive types.
+  除非Java互操作或性能原因,避免使用Java数组.
 <sup>[[link](#avoid-java-arrays)]</sup>
 
 ## Mutation
@@ -1359,11 +1356,11 @@ as small as possible.
 ### Atoms
 
 * <a name="atoms-no-update-within-transactions"></a>
-  Avoid atom updates inside STM transactions.
+  STM事务里面,避免Atom类型的更新.
 <sup>[[link](#atoms-no-update-within-transactions)]</sup>
 
 * <a name="atoms-prefer-swap-over-reset"></a>
-  Try to use `swap!` rather than `reset!`, where possible.
+ 尽可能使用 `swap!` 而不是 `reset!`.
 <sup>[[link](#atoms-prefer-swap-over-reset)]</sup>
 
     ```Clojure
