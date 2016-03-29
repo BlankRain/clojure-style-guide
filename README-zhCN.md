@@ -1376,10 +1376,10 @@ as small as possible.
     (reset! a 5)
     ```
 
-## Strings
+## 字符串
 
 * <a name="prefer-clojure-string-over-interop"></a>
-  Prefer string manipulation functions from `clojure.string` over Java interop or rolling your own.
+  字符串操作函数, `clojure.string`库 胜过 Java交互 胜过 自己撸.
 <sup>[[link](#prefer-clojure-string-over-interop)]</sup>
 
     ```Clojure
@@ -1390,32 +1390,31 @@ as small as possible.
     (.toUpperCase "bruce")
     ```
 
-## Exceptions
+## 异常
 
 * <a name="reuse-existing-exception-types"></a>
-  Reuse existing exception types. Idiomatic Clojure code &mdash; when it does
-  throw an exception &mdash; throws an exception of a standard type
-  (e.g. `java.lang.IllegalArgumentException`,
+  重用现有异常类型. 一般Clojure代码里 &mdash;若真的需要丢异常 &mdash; 丢个标准类型的异常
+  (比如. `java.lang.IllegalArgumentException`,
   `java.lang.UnsupportedOperationException`,
   `java.lang.IllegalStateException`, `java.io.IOException`).
 <sup>[[link](#reuse-existing-exception-types)]</sup>
 
 * <a name="prefer-with-open-over-finally"></a>
-  Favor `with-open` over `finally`.
+  宝宝喜欢 `with-open` 然后 `finally`.
 <sup>[[link](#prefer-with-open-over-finally)]</sup>
 
-## Macros
+## 宏
 
 * <a name="dont-write-macro-if-fn-will-do"></a>
-  Don't write a macro if a function will do.
+  函数能搞定的不写宏
 <sup>[[link](#dont-write-macro-if-fn-will-do)]</sup>
 
 * <a name="write-macro-usage-before-writing-the-macro"></a>
-  Create an example of a macro usage first and the macro afterwards.
+  先写个宏的使用示例,再写宏
 <sup>[[link](#write-macro-usage-before-writing-the-macro)]</sup>
 
 * <a name="break-complicated-macros"></a>
-  Break complicated macros into smaller functions whenever possible.
+  如若可能,把宏拆分成小的函数
 <sup>[[link](#break-complicated-macros)]</sup>
 
 * <a name="macros-as-syntactic-sugar"></a>
@@ -1592,46 +1591,38 @@ you need to comment out a particular form.
   sure to document them in your project's `README` or similar.
 <sup>[[link](#document-annotations)]</sup>
 
-## Existential
+## 信条
 
 * <a name="be-functional"></a>
-  Code in a functional way, using mutation only when it makes sense.
+  函数式编码 , 只在需要变的时候变.
 <sup>[[link](#be-functional)]</sup>
 
 * <a name="be-consistent"></a>
-  Be consistent. In an ideal world, be consistent with these guidelines.
+  坚定信仰. 理想世界, 坚持我们的信仰.
 <sup>[[link](#be-consistent)]</sup>
 
 * <a name="common-sense"></a>
-  Use common sense.
+  使用常识
 <sup>[[link](#common-sense)]</sup>
 
-## Tooling
+## 工具
 
-There are some tools created by the Clojure community that might aid you
-in your endeavor to write idiomatic Clojure code.
+君子性非异也,善假于物也. 社区里面有好些神器,有助于你码出姿势常见的Clojure代码.
 
-* [Slamhound](https://github.com/technomancy/slamhound) is a tool that
-will automatically generate proper `ns` declarations from your
-existing code.
-* [kibit](https://github.com/jonase/kibit) is a static code analyzer
-  for Clojure which uses
-  [core.logic](https://github.com/clojure/core.logic) to search for
-  patterns of code for which there might exist a more idiomatic
-  function or macro.
+* [Slamhound](https://github.com/technomancy/slamhound) 根据代码,自动生成`ns`的工具.
+* [kibit](https://github.com/jonase/kibit) 静态代码分析器.使用
+  [core.logic](https://github.com/clojure/core.logic) 去检索代码模式,给你找出可能已有的函数或宏.
+ 
 
-# Contributing
+# 献一份力
 
-Nothing written in this guide is set in stone. It's my desire to work
-together with everyone interested in Clojure coding style, so that we could
-ultimately create a resource that will be beneficial to the entire Clojure
-community.
+宝宝所写并不是金规玉律.宝宝渴望与对Clojure编码(抠脚姿势)有兴趣的人一块讨论.这样我们就能为社区做贡献,共建社会主义新农村,欧耶.
 
-Feel free to open tickets or send pull requests with improvements. Thanks in
-advance for your help!
+欢迎大家来提意见和建议.多多感谢大家来捧场!
 
-You can also support the style guide with financial
-contributions via [gittip](https://www.gittip.com/bbatsov).
+当然你也可以通过: [gittip](https://www.gittip.com/bbatsov)来点财力上的支持..
+
+(此时此刻,好想把我的支付宝放这里啊啊啊...)
 
 [![通过Gittip支持](https://rawgithub.com/twolfson/gittip-badge/0.2.0/dist/gittip.png)](https://www.gittip.com/bbatsov)
 
