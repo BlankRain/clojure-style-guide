@@ -1632,5 +1632,6 @@ you need to comment out a particular form.
 
 再好的东西,没人晓得也是个渣. 微博上来一发,分享到朋友圈.每个赞,粉,黑都会让本文进步一点.那么,最好的文档在哪里?不用怀疑,在你的分享里.
 
-Cheers,<br/>
-[Bozhidar](https://twitter.com/bbatsov)
+查尔斯,<br/>
+[波之大](https://twitter.com/bbatsov)
+
