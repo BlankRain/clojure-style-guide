@@ -1515,26 +1515,22 @@ you need to comment out a particular form.
   make it self-explanatory. ("Do, or do not. There is no try." --Yoda)
 <sup>[[link](#refactor-dont-comment)]</sup>
 
-### Comment Annotations
+### 注释注解
 
 * <a name="annotate-above"></a>
-  Annotations should usually be written on the line immediately above
-  the relevant code.
+ 注解应该写在相关代码的上一行
 <sup>[[link](#annotate-above)]</sup>
 
 * <a name="annotate-keywords"></a>
-  The annotation keyword is followed by a colon and a space, then a note
-  describing the problem.
+  注解关键字后紧随冒号和一个空格,然后是描述问题的记录
 <sup>[[link](#annotate-keywords)]</sup>
 
 * <a name="indent-annotations"></a>
-  If multiple lines are required to describe the problem, subsequent
-  lines should be indented as much as the first one.
+  如果需要多行来描述问题.后面的行和第一行一样的缩进.
 <sup>[[link](#indent-annotations)]</sup>
 
 * <a name="sing-and-date-annotations"></a>
-  Tag the annotation with your initials and a date so its relevance can
-  be easily verified.
+  标记注解的时候,记录下你的姓名和时间.相关的东西好验证. 
 <sup>[[link](#sing-and-date-annotations)]</sup>
 
     ```Clojure
@@ -1546,9 +1542,7 @@ you need to comment out a particular form.
     ```
 
 * <a name="rare-eol-annotations"></a>
-  In cases where the problem is so obvious that any documentation would
-  be redundant, annotations may be left at the end of the offending line
-  with no note. This usage should be the exception and not the rule.
+  当问题特别明显,文档已是多余的时候.注解派上用场。把它放在一行的最后面,不用任何备注. 这种使用方式,是个意外,不是守则.
 <sup>[[link](#rare-eol-annotations)]</sup>
 
     ```Clojure
@@ -1558,33 +1552,28 @@ you need to comment out a particular form.
     ```
 
 * <a name="todo"></a>
-  Use `TODO` to note missing features or functionality that should be
-  added at a later date.
+  使用`TODO`来标记在未来需要添加的特性或功能.
 <sup>[[link](#todo)]</sup>
 
 * <a name="fixme"></a>
-  Use `FIXME` to note broken code that needs to be fixed.
+  使用`FIXME`来标记需要维护的坏代码.
 <sup>[[link](#fixme)]</sup>
 
 * <a name="optimize"></a>
-  Use `OPTIMIZE` to note slow or inefficient code that may cause
-  performance problems.
+  使用`OPTIMIZE` 去记录慢或者可能有性能问题,需要优化的代码.
 <sup>[[link](#optimize)]</sup>
 
 * <a name="hack"></a>
-  Use `HACK` to note "code smells" where questionable coding practices
-  were used and should be refactored away.
+  使用`HACK` 去记录走味的代码比如使用了有问题的实现方式,需要重新构建.
 <sup>[[link](#hack)]</sup>
 
 * <a name="review"></a>
-  Use `REVIEW` to note anything that should be looked at to confirm it
-  is working as intended. For example: `REVIEW: Are we sure this is how the
+  使用`REVIEW`去记录任何应该去进一步验证的东西.比如: `REVIEW: 你确定这样正确吗?  `REVIEW: Are we sure this is how the
   client does X currently?`
 <sup>[[link](#review)]</sup>
 
 * <a name="document-annotations"></a>
-  Use other custom annotation keywords if it feels appropriate, but be
-  sure to document them in your project's `README` or similar.
+  如有意愿,使用可自定义注解关键字.但是,最好在项目说明里介绍清楚.比如`README`文档,或其他.
 <sup>[[link](#document-annotations)]</sup>
 
 ## 信条
