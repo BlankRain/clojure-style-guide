@@ -1307,18 +1307,16 @@ performance-critical portions of the code.
   除非Java互操作或性能原因,避免使用Java数组.
 <sup>[[link](#avoid-java-arrays)]</sup>
 
-## Mutation
+## 重要差异
 
 ### Refs
 
 * <a name="refs-io-macro"></a>
-  Consider wrapping all I/O calls with the `io!` macro to avoid nasty
-surprises if you accidentally end up calling such code in a
-transaction.
+ 在事务里突然取消IO请求时,考虑使用`io!`宏来封装所有的I/O请求.
 <sup>[[link](#refs-io-macro)]</sup>
 
 * <a name="refs-avoid-ref-set"></a>
-  Avoid the use of `ref-set` whenever possible.
+  如若可能,不用 `ref-set`
 <sup>[[link](#refs-avoid-ref-set)]</sup>
 
     ```Clojure
@@ -1332,25 +1330,21 @@ transaction.
     ```
 
 * <a name="refs-small-transactions"></a>
-  Try to keep the size of transactions (the amount of work encapsulated in them)
-as small as possible.
+  同一事务里,尽量让参与的对象,越少越好.
 <sup>[[link](#refs-small-transactions)]</sup>
 
 * <a name="refs-avoid-short-long-transactions-with-same-ref"></a>
-  Avoid having both short- and long-running transactions interacting
-  with the same Ref.
+  同一个Ref对象上避免使用长短交替的事务.
 <sup>[[link](#refs-avoid-short-long-transactions-with-same-ref)]</sup>
 
 ### Agents
 
 * <a name="agents-send"></a>
-  Use `send` only for actions that are CPU bound and don't block on I/O
-  or other threads.
+  使用 `send` 去执行不会阻塞IO或其他线程的动作.
 <sup>[[link](#agents-send)]</sup>
 
 * <a name="agents-send-off"></a>
-  Use `send-off` for actions that might block, sleep, or otherwise tie
-  up the thread.
+  使用 `send-off` 去执行可能阻塞,挂起,睡一会儿,或直接死掉的线程的动作.
 <sup>[[link](#agents-send-off)]</sup>
 
 ### Atoms
@@ -1473,13 +1467,12 @@ as small as possible.
     ```
 
 * <a name="english-syntax"></a>
-  Comments longer than a word begin with a capital letter and use
-  punctuation. Separate sentences with
-  [one space](http://en.wikipedia.org/wiki/Sentence_spacing).
+  注释多余一个单词的,大写开头,并使用点标点`.` 用[一个空格](http://en.wikipedia.org/wiki/Sentence_spacing)分隔句子,
+  
 <sup>[[link](#english-syntax)]</sup>
 
 * <a name="no-superfluous-comments"></a>
-  Avoid superfluous comments.
+ 避免不必要的注释
 <sup>[[link](#no-superfluous-comments)]</sup>
 
     ```Clojure
@@ -1488,13 +1481,11 @@ as small as possible.
     ```
 
 * <a name="comment-upkeep"></a>
-  Keep existing comments up-to-date. An outdated comment is worse than no comment
-at all.
+  保持更新存在的备注. 过时的备注还不如没有.
 <sup>[[link](#comment-upkeep)]</sup>
 
 * <a name="dash-underscore-reader-macro"></a>
-  Prefer the use of the `#_` reader macro over a regular comment when
-you need to comment out a particular form.
+  如需要注释一个列表,鼓励使用 `#_` .
 <sup>[[link](#dash-underscore-reader-macro)]</sup>
 
     ```Clojure
@@ -1507,8 +1498,8 @@ you need to comment out a particular form.
        delta)
     ```
 
-> Good code is like a good joke - it needs no explanation. <br/>
-> -- Russ Olsen
+> 彪悍的代码,不需要解释. <br/>
+> -- 肉丝
 
 * <a name="refactor-dont-comment"></a>
   Avoid writing comments to explain bad code. Refactor the code to
