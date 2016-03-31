@@ -1097,11 +1097,11 @@ hints for the pairwise grouping with comments or empty lines.
     * `organization.project.module`
 
 * <a name="lisp-case-ns"></a>
-  Use `lisp-case` in composite namespace segments(e.g. `bruce.project-euler`)
+  使用 `lisp-case` 综合命名符号(就像. `bruce.project-euler`)
 <sup>[[link](#lisp-case-ns)]</sup>
 
 * <a name="lisp-case"></a>
-  Use `lisp-case` for function and variable names.
+  使用 `lisp-case`风格为函数和变量命名
 <sup>[[link](#lisp-case)]</sup>
 
     ```Clojure
@@ -1116,14 +1116,13 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="CamelCase-for-protocols-records-structs-and-types"></a>
-  Use `CamelCase` for protocols, records, structs, and types. (Keep
-  acronyms like HTTP, RFC, XML uppercase.)
+  使用 `驼峰` 定义协议s, 记录, 结构体, 和类型. (使用缩略词比如 HTTP, RFC, XML 的大写形式.)
 <sup>[[link](#CamelCase-for-protocols-records-structs-and-types)]</sup>
 
 * <a name="pred-with-question-mark"></a>
-  The names of predicate methods (methods that return a boolean value)
-  should end in a question mark
-  (e.g., `even?`).
+  判别函数 (返回布尔型结果的)
+  名字里应该以`?`结尾
+  (就像, `even?`).
 <sup>[[link](#pred-with-question-mark)]</sup>
 
     ```Clojure
@@ -1136,12 +1135,11 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="changing-state-fns-with-exclamation-mark"></a>
-  The names of functions/macros that are not safe in STM transactions
-  should end with an exclamation mark (e.g. `reset!`).
+  STM事务里不安全的方法或宏应该做个基准测试. (e.g. `reset!`).
 <sup>[[link](#changing-state-fns-with-exclamation-mark)]</sup>
 
 * <a name="arrow-instead-of-to"></a>
-  Use `->` instead of `to` in the names of conversion functions.
+  使用 `->` 代替 `to` 在转换函数的命名里
 <sup>[[link](#arrow-instead-of-to)]</sup>
 
     ```Clojure
@@ -1153,7 +1151,7 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="earmuffs-for-dynamic-vars"></a>
-  Use `*earmuffs*` for things intended for rebinding (ie. are dynamic).
+  使用 `*earmuffs*` 去定义需要重绑定的对象 (比如 动态绑定).
 <sup>[[link](#earmuffs-for-dynamic-vars)]</sup>
 
     ```Clojure
@@ -1165,13 +1163,11 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="dont-flag-constants"></a>
-  Don't use a special notation for constants; everything is assumed a constant
-  unless specified otherwise.
+  无需声明常量.大家都是常量,触发有特殊情况.
 <sup>[[link](#dont-flag-constants)]</sup>
 
 * <a name="underscore-for-unused-bindings"></a>
-  Use `_` for destructuring targets and formal argument names whose
-  value will be ignored by the code at hand.
+  使用 `_` 解构不关心的参数.
 <sup>[[link](#underscore-for-unused-bindings)]</sup>
 
     ```Clojure
