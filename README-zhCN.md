@@ -980,7 +980,7 @@ hints for the pairwise grouping with comments or empty lines.
 <sup>[[link](#pos-and-neg)]</sup>
 
 * <a name="list-star-instead-of-nested-cons"></a>
-  Use `list*` instead of a series of nested `cons` invocations.
+  使用 `list*` 代替一系列的 `cons` 操作.
 <sup>[[link](#list-star-instead-of-nested-cons)]</sup>
 
     ```Clojure
@@ -992,7 +992,7 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="sugared-java-interop"></a>
-  Use the sugared Java interop forms.
+  使用Java语法糖.
 <sup>[[link](#sugared-java-interop)]</sup>
 
     ```Clojure
@@ -1046,7 +1046,7 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="private"></a>
-  Denote private parts of your code.
+  表示你的私有代码
 <sup>[[link](#private)]</sup>
 
     ```Clojure
@@ -1064,11 +1064,11 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="access-private-var"></a>
-  To access a private var (e.g. for testing), use the `@#'some.ns/var` form.
+  访问私有变量(比如测试的时候), 使用 `@#'some.ns/var` 这种形式.
 <sup>[[link](#access-private-var)]</sup>
 
 * <a name="attach-metadata-carefully"></a>
-  Be careful regarding what exactly do you attach metadata to.
+    注意了啊,得清楚你拿到的元数据是谁的.
 <sup>[[link](#attach-metadata-carefully)]</sup>
 
     ```Clojure
@@ -1083,14 +1083,14 @@ hints for the pairwise grouping with comments or empty lines.
     (meta #'a) ;=> nil
     ```
 
-## Naming
+## 命名
 
-> The only real difficulties in programming are cache invalidation and
-> naming things. <br/>
-> -- Phil Karlton
+> 码砖的真正困难在于.
+> 缓存无效和命名东西 <br/>
+> -- 皮里 卡特
 
 * <a name="ns-naming-schemas"></a>
-  When naming namespaces favor the following two schemas:
+  命名命名空间时,走下面两种姿势:
 <sup>[[link](#ns-naming-schemas)]</sup>
 
     * `project.module`
