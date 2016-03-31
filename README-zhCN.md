@@ -1191,40 +1191,39 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="idiomatic-names"></a>
-  Follow `clojure.core`'s example for idiomatic names like `pred` and `coll`.
+  紧随 `clojure.core`样例,使用符合语言习惯的 `pred` 和 `coll`.
 <sup>[[link](#idiomatic-names)]</sup>
 
-    * in functions:
-        * `f`, `g`, `h` - function input
-        * `n` - integer input usually a size
-        * `index`, `i` - integer index
-        * `x`, `y` - numbers
-        * `xs` - sequence
+    * 在函数里:
+        * `f`, `g`, `h` - 函数输入
+        * `n` - 数字输入,通常是大小
+        * `index`, `i` - 数字下标
+        * `x`, `y` - 数字
+        * `xs` - 序列
         * `m` - map
-        * `s` - string input
-        * `re` - regular expression
-        * `coll` - a collection
+        * `s` - 字符串输入
+        * `re` - 正则表达式
+        * `coll` - 集合
         * `pred` - a predicate closure
-        * `& more` - variadic input
+        * `& more` - 不定参数
         * `xf` - xform, a transducer
-    * in macros:
-        * `expr` - an expression
-        * `body` - a macro body
-        * `binding` - a macro binding vector
+    * 在宏里:
+        * `expr` - 表达式
+        * `body` - 宏体
+        * `binding` - 宏绑定向量
 
-## Collections
+## 集合
 
-> It is better to have 100 functions operate on one data structure
-> than to have 10 functions operate on 10 data structures. <br/>
-> -- Alan J. Perlis
+> 百个函数处理一个数据结构,
+> 远比十个函数处理十个数据结构来的爽. <br/>
+> -- 阿兰 J. 彭丽丝
 
 * <a name="avoid-lists"></a>
-  Avoid the use of lists for generic data storage (unless a list is
-  exactly what you need).
+  除非列表就是你想要的,不要用列表来存储数据.
 <sup>[[link](#avoid-lists)]</sup>
 
 * <a name="keywords-for-hash-keys"></a>
-  Prefer the use of keywords for hash keys.
+  使用关键字来作为哈希的key.
 <sup>[[link](#keywords-for-hash-keys)]</sup>
 
     ```Clojure
@@ -1236,9 +1235,8 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="literal-col-syntax"></a>
-  Prefer the use of the literal collection syntax where
-  applicable. However, when defining sets, only use literal syntax
-  when the values are compile-time constants.
+  静态,已知值的话,使用集合字面量来定义集合.
+动态,运行时传值的话,使用集合函数来定义集合.
 <sup>[[link](#literal-col-syntax)]</sup>
 
     ```Clojure
@@ -1254,12 +1252,11 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="avoid-index-based-coll-access"></a>
-  Avoid accessing collection members by index whenever possible.
+ 不要使用下标来访问集合元素,如若可能.
 <sup>[[link](#avoid-index-based-coll-access)]</sup>
 
 * <a name="keywords-as-fn-to-get-map-values"></a>
-  Prefer the use of keywords as functions for retrieving values from
-  maps, where applicable.
+  推荐使用关键字从map里面取值.
 <sup>[[link](#keywords-as-fn-to-get-map-values)]</sup>
 
     ```Clojure
@@ -1276,7 +1273,7 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="colls-as-fns"></a>
-  Leverage the fact that most collections are functions of their elements.
+  集合不仅仅是集合,更是元素功能的组合.
 <sup>[[link](#colls-as-fns)]</sup>
 
     ```Clojure
@@ -1287,7 +1284,7 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="keywords-as-fns"></a>
-  Leverage the fact that keywords can be used as functions of a collection.
+  关键字可作操作集合的函数
 <sup>[[link](#keywords-as-fns)]</sup>
 
     ```Clojure
@@ -1295,8 +1292,7 @@ hints for the pairwise grouping with comments or empty lines.
     ```
 
 * <a name="avoid-transient-colls"></a>
-  Avoid the use of transient collections, except for
-performance-critical portions of the code.
+  若非性能有需要,不要使用可变集合.
 <sup>[[link](#avoid-transient-colls)]</sup>
 
 * <a name="avoid-java-colls"></a>
